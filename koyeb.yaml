@@ -1,0 +1,42 @@
+name: filestreambot
+service:
+  name: filestreambot
+  type: web
+  ports:
+    - port: 8080
+      protocol: http
+  env:
+    - name: API_ID
+      value: "26617321"
+    - name: API_HASH
+      value: "40daa567bfe70fb71d9727c4a93b6503"
+    - name: BOT_TOKEN
+      value: "8046470619:AAG_0XCGWn9tKGl3jRKyizAUXhp3bK2CaPk"
+    - name: OWNER_ID
+      value: "5488475852"
+    - name: FLOG_CHANNEL
+      value: "-1002638021400"
+    - name: ULOG_CHANNEL
+      value: "-1002634615614"
+    - name: DATABASE_URL
+      value: "mongodb+srv://jojix54205:0GtCoMpOVHCjT9sx@mirror.ysg93.mongodb.net/?retryWrites=true&w=majority&appName=mirror"
+    - name: FQDN
+      value: ${{ service.domain }}
+    - name: HAS_SSL
+      value: "True"
+    - name: PORT
+      value: "8080"
+    - name: BIND_ADDRESS
+      value: "0.0.0.0"
+  regions:
+    - fra
+  instance_type: nano
+  scaling:
+    min: 1
+    max: 1
+  routes:
+    - path: /
+      port: 8080
+  dockerfile: Dockerfile
+  buildCommand: ""
+  runCommand: "python -m FileStream"
