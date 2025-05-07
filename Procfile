@@ -1,1 +1,1 @@
-web: python -m FileStream
+web: python3 bot.py
