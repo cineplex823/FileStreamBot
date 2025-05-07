@@ -1,9 +1,5 @@
-aiohttp
-pyrofork
-python-dotenv
+pyrogram==2.0.106
 tgcrypto
+Flask
 motor
-aiofiles
 dnspython
-requests
-jinja2
